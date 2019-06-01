@@ -9,8 +9,6 @@
 // Last Update: 05.30.2019																						   *
 //******************************************************************************************************************
 
-
-
 #pragma region Main.cpp
 
 #include "Main.h"
@@ -154,6 +152,7 @@ void mainMenu(Player &player)
 			Sleep(3000);
 			clrs();
 			Sleep(2000);
+		
 			characterCreator(player);
 			break;
 		}

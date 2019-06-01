@@ -1,15 +1,19 @@
 
 #include "Main.h"
 
+
+
 void characterCreator(Player &player)
 {
-	//player.playerInitialization();
+	Player player;
+
+	player.playerInitialization();
 	
-	int selection;
+	int choice = -1;
 
 	std::cout << "\n Please Make a selection from the menu below to creator your character. ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
-	std::cout << "\n\n Name: ";
+	std::cout << "\n\n Name: " << player.playerName;
 	std::cout << "\n\n Race: ";
 	std::cout << "\n\n Class: ";
 	std::cout << "\n\n Height: ";
@@ -26,9 +30,14 @@ void characterCreator(Player &player)
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 	std::cout << "\n\n >: ";
 
-	std::cin.get();
-	std::cin.ignore();
+	std::cin >> choice;
 
+	selection(choice);
+	
+}
+
+void selection(int selection)
+{
 	switch (selection)
 	{
 	case 0:
@@ -37,19 +46,24 @@ void characterCreator(Player &player)
 	}
 	case 1:
 	{
-		player.playerName = getPlayerName(player);
+		std::cout << " I Got Here.";
+		//getPlayerName(player);
 
 		break;
 	}
 	}
-	player.playerName = getPlayerName(player);
 }
 
-std::string getPlayerName(Player &player)
+void getPlayerName(Player &player)
 {
+	clrs();
 
+	std::cout << "\n Please Enter Your Character's Name: ";
+	
+	std::cin.get();
+	std::cin.clear();
+	std::getline(std::cin, player.playerName);
 
-
-
-	return std::string(player.playerName);
+	std::cout << " I Got Here.";
+	
 }

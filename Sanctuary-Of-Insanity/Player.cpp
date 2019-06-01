@@ -6,7 +6,6 @@
 void Player::playerInitialization()
 {
 
-	Player player;
 
 	std::string playerName = " ";
 	std::string playerRace = " ";
@@ -17,38 +16,40 @@ void Player::playerInitialization()
 	std::string playerHairColor = " ";
 	std::string playerSkinColor = " ";
 
-	player.playerLevel = 1;
-	player.playerCurrentExp = 0;
-	player.playerExpToNextLevel = 50;
+	Player(playerName, playerRace, playerClass, playerHeight, playerWeight, playerEyeColor, playerHairColor, playerSkinColor);
 
-	player.playerStr = 10;
-	player.playerDex = 10;
-	player.playerCon = 10;
-	player.playerWis = 10;
-	player.playerInt = 10;
-	player.playerCha = 10;
+	playerLevel = 1;
+	playerCurrentExp = 0;
+	playerExpToNextLevel = 50;
 
-	player.playerMaxHealth = 10;
-	player.playerCurrentHealth = 10;
-	player.playerMaxStamina = 10;
-	player.playerCurrentStamina = 10;
-	player.playerMaxMana = 10;
-	player.playerCurrentMana = 10;
-	player.playerBaseAttack = 5;
-	player.playerCurrentAttack = 5;
-	player.playerBaseMagAttack = 5;
-	player.playerCurrentMagAttack = 5;
-	player.playerBaseDefense = 5;
-	player.playerCurrentDefense = 5;
+	playerStr = 10;
+	playerDex = 10;
+	playerCon = 10;
+	playerWis = 10;
+	playerInt = 10;
+	playerCha = 10;
 
-	player.playerMaxSanity = 100;
-	player.playerCurrentSanity = 100;
+	playerMaxHealth = 10;
+	playerCurrentHealth = 10;
+	playerMaxStamina = 10;
+	playerCurrentStamina = 10;
+	playerMaxMana = 10;
+	playerCurrentMana = 10;
+	playerBaseAttack = 5;
+	playerCurrentAttack = 5;
+	playerBaseMagAttack = 5;
+	playerCurrentMagAttack = 5;
+	playerBaseDefense = 5;
+	playerCurrentDefense = 5;
 
-	player.playerMaxCarryWeight = 0.0;
-	player.playerCurrentCarryWeight = 0.0;
+	playerMaxSanity = 100;
+	playerCurrentSanity = 100;
 
-	player.playerPosY = 0;
-	player.playerPosX = 0;
+	playerMaxCarryWeight = 0.0;
+	playerCurrentCarryWeight = 0.0;
+
+	playerPosY = 0;
+	playerPosX = 0;
 
 }
 

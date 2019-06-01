@@ -1,4 +1,5 @@
 #pragma once
 
 void characterCreator(Player&);
-std::string getPlayerName(Player&);
+void getPlayerName(Player&);
+void selection(int);

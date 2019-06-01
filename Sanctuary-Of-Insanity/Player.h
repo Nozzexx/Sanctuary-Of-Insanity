@@ -9,6 +9,26 @@ public:
 
 	void playerInitialization();
 	void outputTest(Player&);
+
+	Player()
+	{
+
+	}
+
+	Player(std::string pName, std::string pRace, std::string pClass, std::string pHeight, std::string pWeight, std::string pEyeColor, std::string pHairColor, std::string pSkinColor)
+	{ 
+
+		pName = playerName;
+		pRace = playerRace;
+		pClass = playerClass;
+		pHeight = playerHeight;
+		pWeight = playerWeight;
+		pEyeColor = playerEyeColor;
+		pHairColor = playerHairColor;
+		pSkinColor = playerSkinColor;
+
+	}
+
 //******************************************************************************************************************
 //																												   *
 //												 PLAYER RACE FUNCTIONS											   *
@@ -134,4 +154,5 @@ public:
 
 
 };
+
 
