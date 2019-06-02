@@ -51,6 +51,70 @@ void Player::playerInitialization()
 	playerPosX = 0;
 
 }
+void Player::human()
+{
+	playerDex += 2;
+	playerCon -= 1;
+	playerMaxHealth += 5;
+	playerBaseDefense += 5;
+}
+void Player::eldrich()
+{
+	playerCha += 2;
+	playerWis -= 1;
+	playerMaxStamina += 10;
+}
+void Player::faceless()
+{
+	playerInt += 2;
+	playerStr -= 1;
+	playerMaxMana += 10;
+}
+void Player::golaith()
+{
+	playerStr += 1;
+	playerCon += 1;
+	playerInt -= 1;
+	playerMaxHealth += 10;
+}
+void Player::protector()
+{
+	playerStr += 2;
+	playerCon += 2;
+	playerDex -= 2;
+	playerBaseMagAttack -= 2;
+	playerBaseAttack += 3;
+	playerBaseDefense += 5;
+
+}
+void Player::artificer()
+{
+	playerCon += 2;
+	playerInt += 2;
+	playerStr -= 2;
+	playerBaseMagAttack += 8;
+	playerBaseAttack -= 2;
+	playerBaseDefense -= 4;
+
+}
+void Player::scoundrel()
+{
+	playerDex += 2;
+	playerCha += 2;
+	playerWis -= 2;
+	playerBaseMagAttack += 2;
+	playerBaseAttack += 2;
+	playerBaseDefense -= 4;
+}
+void Player::voidPriest()
+{
+	playerDex += 2;
+	playerWis += 2;
+	playerCon -= 2;
+	playerBaseMagAttack += 4;
+	playerBaseAttack -= 5;
+	playerBaseAttack += 3;
+}
 
 #pragma region Output Test
 

@@ -52,7 +52,7 @@ public:
 
 	void protector();
 	void scoundrel();
-	void artificier();
+	void artificer();
 	void voidPriest();
 
 //******************************************************************************************************************

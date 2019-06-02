@@ -14,3 +14,4 @@ void getPlayerWeight(Player&);
 void getPlayerHairColor(Player&);
 void getPlayerEyeColor(Player&);
 void getPlayerSkinColor(Player&);
+void getPlayerConfirmation(Player&);
