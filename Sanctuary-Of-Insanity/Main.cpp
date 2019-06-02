@@ -153,7 +153,7 @@ void mainMenu(Player &player)
 			clrs();
 			Sleep(2000);
 		
-			characterCreator(player);
+			characterInitialization();
 			break;
 		}
 		case 2:

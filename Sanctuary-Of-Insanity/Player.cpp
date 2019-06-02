@@ -6,15 +6,14 @@
 void Player::playerInitialization()
 {
 
-
-	std::string playerName = " ";
-	std::string playerRace = " ";
-	std::string playerClass = " ";
-	std::string playerHeight = " ";
-	std::string playerWeight = " ";
-	std::string playerEyeColor = " ";
-	std::string playerHairColor = " ";
-	std::string playerSkinColor = " ";
+	playerName = " ";
+    playerRace = " ";
+	playerClass = " ";
+	playerHeight = " ";
+	playerWeight = " ";
+	playerEyeColor = " ";
+	playerHairColor = " ";
+	playerSkinColor = " ";
 
 	Player(playerName, playerRace, playerClass, playerHeight, playerWeight, playerEyeColor, playerHairColor, playerSkinColor);
 

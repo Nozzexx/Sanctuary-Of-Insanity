@@ -13,6 +13,10 @@ public:
 	Player()
 	{
 
+
+
+
+
 	}
 
 	Player(std::string pName, std::string pRace, std::string pClass, std::string pHeight, std::string pWeight, std::string pEyeColor, std::string pHairColor, std::string pSkinColor)
