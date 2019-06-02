@@ -11,22 +11,19 @@ void characterInitialization()
 	
 	int choice = -1;
 
-	std::cout << "\n Please Make a selection from the menu below to create your character. ";
+	std::cout << std::setw(75) << " == Character Creation == ";
+	std::cout << "\n\n Please Make a selection from the menu below to create your character. ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
-	std::cout << "\n\n Name: ";
-	std::cout << "\n\n Race: ";
-	std::cout << "\n\n Class: ";
-	std::cout << "\n\n Height: ";
-	std::cout << "\n\n Weight: ";
-	std::cout << "\n\n Hair Color: ";
-	std::cout << "\n\n Eye Color: ";
-	std::cout << "\n\n Skin Color: ";
-
+	std::cout << "\n\n Name: " << std::setw(55) << " " << " Height: ";
+	std::cout << "\n\n\n Race: " << std::setw(55) << " " << " Weight: ";
+	std::cout << "\n\n\n Class: " << std::setw(54) << " " << " Hair Style: ";
+	std::cout << "\n\n\n Alightment: " << std::setw(49) << " " << " Hair Color: ";
+	std::cout << "\n\n\n Gender: " << std::setw(53) << " " << " Eye Color: ";
+	std::cout << "\n\n\n Age: " << std::setw(56) << " " << " Skin Color: ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
-	std::cout << "\n\n [1] Name " << std::setw(40) << " [5] Weight ";
-	std::cout << "\n\n [2] Race " << std::setw(44) << " [6] Hair Color ";
-	std::cout << "\n\n [3] Class " << std::setw(42) << " [7] Eye Color ";
-	std::cout << "\n\n [4] Height " << std::setw(42) << " [8] Skin Color " << std::setw(70) << "[0] Create Character";
+	std::cout << "\n\n [1] Name " << std::setw(25) << " [4] Alignment " << std::setw(23) << " [7] Height " << std::setw(29) << " [10] Hair Color ";
+	std::cout << "\n\n [2] Race " << std::setw(22) << " [5] Gender " << std::setw(26) << " [8] Weight " << std::setw(28) << " [11] Eye Color ";
+	std::cout << "\n\n [3] Class " << std::setw(18) << " [6] Age " << std::setw(33) << " [9] Hair Style " << std::setw(25) << " [12] Skin Color " << std::setw(35) << "[0] Create Character ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 	std::cout << "\n\n >: ";
 
@@ -41,22 +38,42 @@ void characterCreator(Player &player)
 
 	int choice = -1;
 
-	std::cout << "\n Please Make a selection from the menu below to create your character. ";
+	int spacer = 0;
+	int gap = 0;
+	
+
+	std::cout << std::setw(75) << " == Character Creation == ";
+	std::cout << "\n\n Please Make a selection from the menu below to create your character. ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
-	std::cout << "\n\n Name: " << player.playerName;
-	std::cout << "\n\n Race: " << player.playerRace;
-	std::cout << "\n\n Class: " << player.playerClass;
-	std::cout << "\n\n Height: " << player.playerHeight;
-	std::cout << "\n\n Weight: " << player.playerWeight;
-	std::cout << "\n\n Hair Color: " << player.playerHairColor;
-	std::cout << "\n\n Eye Color: " << player.playerEyeColor;
-	std::cout << "\n\n Skin Color: " << player.playerSkinColor;
+
+	spacer = 55;
+	gap = player.playerName.length();
+	std::cout << "\n\n Name: " << player.playerName << std::setw(spacer - gap)  << " Height: ";
+
+	spacer = 55;
+	gap = player.playerRace.length();
+	std::cout << "\n\n\n Race: " << std::setw(spacer - gap) << " " << " Weight: ";
+
+	spacer = 54;
+	gap = player.playerClass.length();
+	std::cout << "\n\n\n Class: " << std::setw(spacer - gap) << " " << " Hair Style: ";
+
+	spacer = 49;
+	gap = player.playerAlignment.length();
+	std::cout << "\n\n\n Alightment: " << std::setw(spacer - gap) << " " << " Hair Color: ";
+
+	spacer = 53;
+	gap = player.playerGender.length();
+	std::cout << "\n\n\n Gender: " << std::setw(spacer - gap) << " " << " Eye Color: ";
+
+	spacer = 56;
+	gap = player.playerAge.length();
+	std::cout << "\n\n\n Age: " << std::setw(spacer - gap) << " " << " Skin Color: ";
 
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
-	std::cout << "\n\n [1] Name " << std::setw(40) << " [5] Weight ";
-	std::cout << "\n\n [2] Race " << std::setw(44) << " [6] Hair Color ";
-	std::cout << "\n\n [3] Class " << std::setw(42) << " [7] Eye Color ";
-	std::cout << "\n\n [4] Height " << std::setw(42) << " [8] Skin Color " << std::setw(70) << "[0] Create Character";
+	std::cout << "\n\n [1] Name " << std::setw(25) << " [4] Alignment " << std::setw(23) << " [7] Height " << std::setw(29) << " [10] Hair Color ";
+	std::cout << "\n\n [2] Race " << std::setw(22) << " [5] Gender " << std::setw(26) << " [8] Weight " << std::setw(28) << " [11] Eye Color ";
+	std::cout << "\n\n [3] Class " << std::setw(18) << " [6] Age " << std::setw(33) << " [9] Hair Style " << std::setw(25) << " [12] Skin Color " << std::setw(35) << "[0] Create Character ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 	std::cout << "\n\n >: ";
 
@@ -1485,7 +1502,6 @@ void getPlayerConfirmation(Player &player)
 
 	// Calculation of Player's Starting Statistics.
 
-	/*
 	player.playerMaxHealth += player.playerCon / 2;
 	player.playerCurrentHealth = player.playerMaxHealth;
 
@@ -1509,9 +1525,18 @@ void getPlayerConfirmation(Player &player)
 
 	player.playerMaxCarryWeight += player.playerStr * 4.0;
 	player.playerCurrentCarryWeight = 0.0;
-	*/
+	
 
-	player.outputTest(player);
+	std::cout << "\n" << player.playerName;
+	std::cout << "\n Lv." << player.playerLevel << " " << player.playerRace;
+
+
+
+
+
+
+
+	//player.outputTest(player);
 	std::cin.get();
 	std::cin.ignore();
 	clrs();

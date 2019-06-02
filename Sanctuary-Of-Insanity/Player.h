@@ -75,11 +75,15 @@ public:
 	std::string playerName;
 	std::string playerRace;
 	std::string playerClass;
+	std::string playerGender;
+	std::string playerAge;
 	std::string playerHeight;
 	std::string playerWeight;
 	std::string playerEyeColor;
 	std::string playerHairColor;
+	std::string playerHairStyle;
 	std::string playerSkinColor;
+	std::string playerAlignment;
 	
 
 

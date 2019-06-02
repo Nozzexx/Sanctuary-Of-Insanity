@@ -116,6 +116,10 @@ void Player::voidPriest()
 	playerBaseAttack += 3;
 }
 
+void Player::characterSheet()
+{
+
+}
 #pragma region Output Test
 
 void Player::outputTest(Player &player)
