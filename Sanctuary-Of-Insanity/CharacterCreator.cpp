@@ -46,29 +46,29 @@ void characterCreator(Player &player)
 	std::cout << "\n\n Please Make a selection from the menu below to create your character. ";
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 
-	spacer = 55;
+	spacer = 64;
 	gap = player.playerName.length();
 	std::cout << "\n\n Name: " << player.playerName << std::setw(spacer - gap)  << " Height: ";
 
 	spacer = 55;
 	gap = player.playerRace.length();
-	std::cout << "\n\n\n Race: " << std::setw(spacer - gap) << " " << " Weight: ";
+	std::cout << "\n\n\n Race: " << player.playerRace << std::setw(spacer - gap) << " " << " Weight: ";
 
 	spacer = 54;
 	gap = player.playerClass.length();
-	std::cout << "\n\n\n Class: " << std::setw(spacer - gap) << " " << " Hair Style: ";
+	std::cout << "\n\n\n Class: " << player.playerClass << std::setw(spacer - gap) << " " << " Hair Style: ";
 
 	spacer = 49;
 	gap = player.playerAlignment.length();
-	std::cout << "\n\n\n Alightment: " << std::setw(spacer - gap) << " " << " Hair Color: ";
+	std::cout << "\n\n\n Alightment: " << player.playerClass << std::setw(spacer - gap) << " " << " Hair Color: ";
 
 	spacer = 53;
 	gap = player.playerGender.length();
-	std::cout << "\n\n\n Gender: " << std::setw(spacer - gap) << " " << " Eye Color: ";
+	std::cout << "\n\n\n Gender: " << player.playerClass << std::setw(spacer - gap) << " " << " Eye Color: ";
 
 	spacer = 56;
 	gap = player.playerAge.length();
-	std::cout << "\n\n\n Age: " << std::setw(spacer - gap) << " " << " Skin Color: ";
+	std::cout << "\n\n\n Age: " << player.playerClass << std::setw(spacer - gap) << " " << " Skin Color: ";
 
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 	std::cout << "\n\n [1] Name " << std::setw(25) << " [4] Alignment " << std::setw(23) << " [7] Height " << std::setw(29) << " [10] Hair Color ";
