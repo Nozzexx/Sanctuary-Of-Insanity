@@ -1,8 +1,6 @@
 
 #include "Main.h"
 
-
-
 void characterInitialization()
 {
 	Player player;
@@ -48,27 +46,27 @@ void characterCreator(Player &player)
 
 	spacer = 64;
 	gap = player.playerName.length();
-	std::cout << "\n\n Name: " << player.playerName << std::setw(spacer - gap)  << " Height: ";
+	std::cout << "\n\n Name: " << player.playerName << std::setw(spacer - gap)  << " Height: " << player.playerHeight;
 
 	spacer = 55;
 	gap = player.playerRace.length();
-	std::cout << "\n\n\n Race: " << player.playerRace << std::setw(spacer - gap) << " " << " Weight: ";
+	std::cout << "\n\n\n Race: " << player.playerRace << std::setw(spacer - gap) << " " << " Weight: " << player.playerWeight;
 
 	spacer = 54;
 	gap = player.playerClass.length();
-	std::cout << "\n\n\n Class: " << player.playerClass << std::setw(spacer - gap) << " " << " Hair Style: ";
+	std::cout << "\n\n\n Class: " << player.playerClass << std::setw(spacer - gap) << " " << " Hair Style: " << player.playerHairStyle;
 
-	spacer = 49;
+	spacer = 50;
 	gap = player.playerAlignment.length();
-	std::cout << "\n\n\n Alightment: " << player.playerClass << std::setw(spacer - gap) << " " << " Hair Color: ";
+	std::cout << "\n\n\n Alignment: " << player.playerAlignment << std::setw(spacer - gap) << " " << " Hair Color: " << player.playerHairColor;
 
 	spacer = 53;
 	gap = player.playerGender.length();
-	std::cout << "\n\n\n Gender: " << player.playerClass << std::setw(spacer - gap) << " " << " Eye Color: ";
+	std::cout << "\n\n\n Gender: " << player.playerGender << std::setw(spacer - gap) << " " << " Eye Color: " << player.playerEyeColor;
 
 	spacer = 56;
 	gap = player.playerAge.length();
-	std::cout << "\n\n\n Age: " << player.playerClass << std::setw(spacer - gap) << " " << " Skin Color: ";
+	std::cout << "\n\n\n Age: " << player.playerAge << std::setw(spacer - gap) << " " << " Skin Color: " << player.playerSkinColor;
 
 	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
 	std::cout << "\n\n [1] Name " << std::setw(25) << " [4] Alignment " << std::setw(23) << " [7] Height " << std::setw(29) << " [10] Hair Color ";
@@ -112,32 +110,61 @@ void selection(Player &player, int selection)
 	}
 	case 4:
 	{
-		getPlayerHeight(player);
+		getPlayerAlignment(player);
 		characterCreator(player);
 		break;
 	}
 	case 5:
 	{
-		getPlayerWeight(player);
+		getPlayerGender(player);
 		characterCreator(player);
 		break;
 	}
 	case 6:
 	{
-		getPlayerHairColor(player);
+		getPlayerAge(player);
 		characterCreator(player);
 		break;
 	}
 	case 7:
 	{
-		getPlayerEyeColor(player);
+		getPlayerHeight(player);
 		characterCreator(player);
 		break;
 	}
 	case 8:
 	{
+		getPlayerWeight(player);
+		characterCreator(player);
+		break;
+	}
+	case 9:
+	{
+		getPlayerHairStyle(player);
+		characterCreator(player);
+		break;
+	}
+	case 10:
+	{
+		getPlayerHairColor(player);
+		characterCreator(player);
+		break;
+	}
+	case 11:
+	{
+		getPlayerEyeColor(player);
+		characterCreator(player);
+		break;
+	}
+	case 12:
+	{
 		getPlayerSkinColor(player);
 		characterCreator(player);
+		break;
+	}
+	case 999:
+	{
+		player.outputTest(player);
 		break;
 	}
 	default:
@@ -596,6 +623,510 @@ void getPlayerClass(Player &player)
 	clrs();
 }
 
+void getPlayerAlignment(Player &player)
+{
+	clrs();
+
+	int selection = -1;
+
+	std::cout << "\n Please Select an Alignment: ";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n [1] Lawful Good";
+	std::cout << "\n\n [2] Neutral Good";
+	std::cout << "\n\n [3] True Neutral";
+	std::cout << "\n\n [4] Neutral Evil";
+	std::cout << "\n\n [5] Lawful Evil";
+	std::cout << "\n\n [6] Back";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n Select an Alignment for More Information: ";
+	std::cout << "\n\n >:";
+
+	std::cin.get();
+	std::cin.clear();
+	std::cin >> selection;
+
+	switch (selection)
+	{
+	case 0:
+	{
+
+	}
+	case 1:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Lawful Good: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's alignment to Lawful Good.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Lawful Good? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Lawful Good.";
+			player.playerAlignment = "Lawful Good";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAlignment(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 2:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Neutral Good: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's alignment to Neutral Good.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Neutral Good? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Neutral Good.";
+			player.playerAlignment = "Neutral Good";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAlignment(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 3:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n True Neutral: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's alignment to true neutral.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose True Neutral? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected True Neutral.";
+			player.playerAlignment = "True Neutral";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAlignment(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 4:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Neutral Evil: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's alignment to neutral evil.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Neutral Evil? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Neutral Evil.";
+			player.playerAlignment = "Neutral Evil";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAlignment(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 5:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Lawful Evil: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's alignment to lawful evil.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Lawful Evil? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Lawful Evil.";
+			player.playerAlignment = "Lawful Evil";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAlignment(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 6:
+	{
+		characterCreator(player);
+		break;
+	}
+	default:
+	{
+
+	}
+	}
+	clrs();
+}
+
+void getPlayerGender(Player &player)
+{
+	clrs();
+
+	int selection = -1;
+
+	std::cout << "\n Please Select a Gender: ";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n [1] Male";
+	std::cout << "\n\n [2] Female";
+	std::cout << "\n\n [3] Non-Binary";
+	std::cout << "\n\n [6] Back";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n Select a Gender for More Information: ";
+	std::cout << "\n\n >:";
+
+	std::cin.get();
+	std::cin.clear();
+	std::cin >> selection;
+
+	switch (selection)
+	{
+	case 0:
+	{
+
+	}
+	case 1:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Male: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's gender to male.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Male? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Male.";
+			player.playerGender = "Male";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerGender(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 2:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Female: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's gender to female.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Female? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Female.";
+			player.playerGender = "Female";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerGender(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 3:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Non-Binary: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's gender to non-binary.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Non-Binary? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Non-Binary.";
+			player.playerGender = "Non-Binary";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerGender(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 4:
+	{
+		characterCreator(player);
+		break;
+	}
+	default:
+	{
+
+	}
+	}
+	clrs();
+}
+
+void getPlayerAge(Player &player)
+{
+	clrs();
+
+	int selection = -1;
+
+	std::cout << "\n Please Select an Age: ";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n [1] Adolecence";
+	std::cout << "\n\n [2] Middle-Aged";
+	std::cout << "\n\n [3] Senior";
+	std::cout << "\n\n [4] Back";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n Select a Age for More Information: ";
+	std::cout << "\n\n >:";
+
+	std::cin.get();
+	std::cin.clear();
+	std::cin >> selection;
+
+	switch (selection)
+	{
+	case 0:
+	{
+
+	}
+	case 1:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Adolecence: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's gender to adolecence.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Adolecence? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Adolecence.";
+			player.playerAge = "Adolecence";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAge(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 2:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Middle-Aged: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's age to middle-aged.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Middle-Aged? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Middle-Aged.";
+			player.playerAge = "Middle-Aged";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAge(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 3:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Senior: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's gender to senior.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Senior? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Senior.";
+			player.playerAge = "Senior";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerAge(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 4:
+	{
+		characterCreator(player);
+		break;
+	}
+	default:
+	{
+
+	}
+	}
+	clrs();
+}
+
 void getPlayerHeight(Player &player)
 {
 	clrs();
@@ -938,6 +1469,186 @@ void getPlayerWeight(Player &player)
 		case 'N':
 		{
 			getPlayerWeight(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 5:
+	{
+		characterCreator(player);
+		break;
+	}
+	default:
+	{
+
+	}
+	}
+	clrs();
+}
+
+void getPlayerHairStyle(Player &player)
+{
+	clrs();
+
+	int selection = -1;
+
+	std::cout << "\n Please Select a Hair Style: ";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n [1] Bald";
+	std::cout << "\n\n [2] Short";
+	std::cout << "\n\n [3] Medium";
+	std::cout << "\n\n [4] Long";
+	std::cout << "\n\n [5] Exit";
+	std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+	std::cout << "\n\n Select a Hair Style for More Information: ";
+	std::cout << "\n\n >:";
+
+	std::cin.get();
+	std::cin.clear();
+	std::cin >> selection;
+
+	switch (selection)
+	{
+	case 0:
+	{
+
+	}
+	case 1:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Bald: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's hair style to bald.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Bald? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Bald.";
+			player.playerHairStyle = "Bald";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerHairStyle(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 2:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Short: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's hair style to short.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Short? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Short.";
+			player.playerHairStyle = "Short";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerHairStyle(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 3:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Medium: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's hair style to medium.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Medium? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Medium.";
+			player.playerHairStyle = "Medium";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerHairStyle(player);
+			break;
+		}
+		}
+		break;
+	}
+	case 4:
+	{
+		clrs();
+
+		char confirmation;
+
+		std::cout << "\n Long: ";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+		std::cout << "\n\n This will change your character's hair style to long.";
+		std::cout << "\n\n +-------------------------------------------------------------------------------------------------------------------------+";
+
+		std::cout << "\n\n Choose Long? ";
+		std::cout << "\n\n ( Y | N )";
+		std::cout << "\n\n >:";
+
+		std::cin >> confirmation;
+
+		switch (confirmation)
+		{
+		case 'y':
+		case 'Y':
+		{
+			std::cout << " You have Selected Long.";
+			player.playerHairStyle = "Long";
+			break;
+		}
+		case 'n':
+		case 'N':
+		{
+			getPlayerHairStyle(player);
 			break;
 		}
 		}
