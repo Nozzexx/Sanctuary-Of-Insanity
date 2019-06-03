@@ -39,7 +39,7 @@ void characterCreator(Player &player)
 	int choice = -1;
 
 	int spacer = 0;
-	int gap = 0;
+	size_t gap = 0;
 	
 
 	std::cout << std::setw(75) << " == Character Creation == ";
