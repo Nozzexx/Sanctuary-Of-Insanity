@@ -2211,6 +2211,11 @@ void getPlayerConfirmation(Player &player)
 {
 	clrs();
 
+
+	int spacer = 0;
+	size_t gap = 0;
+	std::string miscGap = " ";
+
 	// Calculation of Player's Starting Statistics.
 
 	player.playerMaxHealth += player.playerCon / 2;
@@ -2231,6 +2236,7 @@ void getPlayerConfirmation(Player &player)
 	player.playerBaseDefense += player.playerCon / 2;
 	player.playerCurrentDefense = player.playerBaseDefense;
 
+
 	player.playerMaxSanity += player.playerWis / 2;
 	player.playerCurrentSanity = player.playerMaxSanity;
 
@@ -2238,13 +2244,84 @@ void getPlayerConfirmation(Player &player)
 	player.playerCurrentCarryWeight = 0.0;
 	
 
-	std::cout << "\n" << player.playerName;
-	std::cout << "\n Lv." << player.playerLevel << " " << player.playerRace;
+	std::cout << "\n  " << player.playerName;
+	std::cout << "\n  Lv.0" << player.playerLevel << " " << player.playerRace << " " << player.playerGender << " " << player.playerClass;
 
+	spacer = 40;
+	gap = player.playerClass.length();
+	std::cout << std::setw(spacer - gap) << " Alignment: " << player.playerAlignment;
 
+	spacer = 45;
+	gap = player.playerAlignment.length();
+	std::cout << std::setw(spacer - gap) << " Experience: " << player.playerCurrentExp << "/" << player.playerExpToNextLevel;
 
+	std::cout << "\n +-------------------------------------------------------------------------------------------------------------------------+ \n";
 
+	spacer = 37;
+	gap = miscGap.length();
+	std::cout << std::setw(23) << " Health: " << player.playerCurrentHealth << "/" << player.playerMaxHealth << miscGap;
 
+	std::cout << std::setw(spacer - gap) << " Stamina: " << player.playerCurrentStamina << "/" << player.playerMaxStamina << miscGap;
+
+	spacer = 34;
+	std::cout << std::setw(spacer - gap) << " Mana: " << player.playerCurrentMana << "/" << player.playerMaxMana;
+
+	std::cout << "\n +-------------------------------------------------------------------------------------------------------------------------+ \n";
+
+	spacer = 40;
+	gap = miscGap.length();
+
+	std::cout << std::setw(30) << " Ability Scores " << miscGap;
+
+	std::cout << std::setw(spacer - gap) << " Combat Scores " << miscGap;
+
+	spacer = 39;
+	gap = miscGap.length();
+	std::cout << std::setw(spacer - gap) << " Appearance ";
+
+	std::cout << "\n    +-----------------------------------+   +-----------------------------------+   +-----------------------------------+ \n";
+
+	spacer = 29;
+	std::cout << std::setw(16) << " Strength: " << player.playerStr << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
+
+	spacer = 27;
+	std::cout << "\n" << std::setw(17) << " Dexterity: " << player.playerDex << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
+
+	spacer = 24;
+	std::cout << "\n" << std::setw(19) << " Constituion: " << player.playerCon << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
+
+	spacer = 31;
+	std::cout << "\n" << std::setw(14) << " Wisdom: " << player.playerWis << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
+
+	spacer = 24;
+	std::cout << "\n" << std::setw(20) << " Intelligence: " << player.playerInt << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
+
+	spacer = 29;
+	std::cout << "\n" << std::setw(16) << " Charisma: " << player.playerCha << miscGap << std::setw(spacer - gap) << "|   " << "Attack: " << player.playerBaseAttack << miscGap;
+	spacer = 31;
+	std::cout << std::setw(spacer - gap) << "|   " << "Height: " << player.playerHeight;
+
+	std::cout << "\n" << std::setw(43) << "|" << std::setw(40) << "|";
 
 
 	//player.outputTest(player);
